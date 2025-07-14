@@ -19,6 +19,10 @@ const GallerySlider = () => {
   const [isAutoPlaying, setIsAutoPlaying] = React.useState(true);
   const totalSlides = galleryPhotos.length;
 
+  const goToNext = React.useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  }, [totalSlides]);
+
   // Auto-advance slides
   React.useEffect(() => {
     if (!isAutoPlaying) return;
@@ -29,10 +33,6 @@ const GallerySlider = () => {
     
     return () => clearInterval(timer);
   }, [currentIndex, isAutoPlaying, goToNext]);
-
-  const goToNext = React.useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  }, [totalSlides]);
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
