@@ -28,11 +28,11 @@ const GallerySlider = () => {
     }, 5000);
     
     return () => clearInterval(timer);
-  }, [currentIndex, isAutoPlaying]);
+  }, [currentIndex, isAutoPlaying, goToNext]);
 
-  const goToNext = () => {
+  const goToNext = React.useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
@@ -190,7 +190,7 @@ export const AboutTechtopia = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center">
         <h1 className="text-xl sm:text-2xl md:text-3xl text-[#43fcff] font-bold mb-3 tracking-wide">ABOUT TECHTOPIA</h1>
         <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed mb-3">
-          Welcome to the ITCS Departmental Fest - a vibrant celebration of innovation, creativity, and technical brilliance! Our annual fest brings together the brightest minds for an exciting lineup of events that include code battles, technical games, seminars, and hands-on opportunities to build and showcase projects. Whether you're here to compete, learn, or simply have fun, our fest offers something for everyone. From thrilling coding challenges to thought-provoking seminars and fun-filled games and entertainment, it's the perfect platform to demonstrate your skills, explore new ideas, and connect with like-minded tech enthusiasts.
+          Welcome to the ITCS Departmental Fest - a vibrant celebration of innovation, creativity, and technical brilliance! Our annual fest brings together the brightest minds for an exciting lineup of events that include code battles, technical games, seminars, and hands-on opportunities to build and showcase projects. Whether you&apos;re here to compete, learn, or simply have fun, our fest offers something for everyone. From thrilling coding challenges to thought-provoking seminars and fun-filled games and entertainment, it&apos;s the perfect platform to demonstrate your skills, explore new ideas, and connect with like-minded tech enthusiasts.
         </p>
         <div className="w-full text-center my-4">
           <span className="text-[#43fcff] text-base sm:text-lg md:text-xl font-bold block mb-1">
@@ -232,7 +232,7 @@ export const AboutCollege = () => {
         <h1 className="text-2xl sm:text-3xl md:text-4xl text-[#43fcff] font-bold mb-4 tracking-wide text-center md:text-left">ABOUT COLLEGE</h1>
         <h2 className="text-lg sm:text-xl md:text-2xl text-[#43fcff] font-semibold mb-3 text-center md:text-left">Patkar-Varde College</h2>
         <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-loose mb-5 text-left">
-          Chikitsak Samuha's Patkar Varde College is affiliated with the University of Mumbai and is located in Mumbai's Western suburbs. It has achieved an 'A+' NAAC accreditation with an institutional score of 3.53, ISO certification, and numerous recognitions such as India's Education Excellence Award and the best College Award by the University of Mumbai. Ranked 40th in the Education World India Autonomous College Ranking and 13th in Maharashtra, our college is committed to providing affordable quality education and fostering academic excellence.
+          Chikitsak Samuha&apos;s Patkar Varde College is affiliated with the University of Mumbai and is located in Mumbai&apos;s Western suburbs. It has achieved an &apos;A+&apos; NAAC accreditation with an institutional score of 3.53, ISO certification, and numerous recognitions such as India&apos;s Education Excellence Award and the best College Award by the University of Mumbai. Ranked 40th in the Education World India Autonomous College Ranking and 13th in Maharashtra, our college is committed to providing affordable quality education and fostering academic excellence.
         </p>
         <div className="w-full">
           <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-loose text-justify mb-4">
