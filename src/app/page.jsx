@@ -77,7 +77,16 @@ export const HeroContent = () => {
             <span>Department of Computer Science & Information Technology</span>
           </div>
         </div>
-        <div className="-mt-4 text-[80px] animate-slideDown text-[#43fcff] flex flex-col">
+        <div 
+          className="-mt-4 animate-slideDown text-[#43fcff] flex flex-col w-full max-w-full"
+          style={{
+            fontSize: "clamp(2.5rem, 12vw, 5rem)",
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
+            textAlign: "center",
+            maxWidth: "100%"
+          }}
+        >
           TechTopia
         </div>
         <hr className="border-[#43fcff] w-[70%] md:w-[60%] lg:w-[60vh] h-[3px] shadow-lg border-solid border-[0.5px] rounded-lg ease-in-out duration-300" />

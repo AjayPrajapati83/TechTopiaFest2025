@@ -26,7 +26,7 @@ export const iconLinks = [
   {
     id: 1,
     className: "fa fa-instagram hover:text-pink-600",
-    url: "https://www.instagram.com/_byte_it_/",
+    url: "https://www.instagram.com/techtopiafest?igsh=N3BsaTl6ZjcyeDhr",
   },
   
 ];

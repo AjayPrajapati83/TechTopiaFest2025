@@ -43,11 +43,15 @@ const Navbar = () => {
           </Link>
           <div className="flex items-center">
             <div
-              className={`menu duration-300 flex-col gap-2 md:gap-0 lg:gap-3 flex md:flex-row fixed top-[4.5rem] md:top-0 ${
+              className={`menu duration-300 flex-col gap-2 md:gap-0 lg:gap-3 flex md:flex-row fixed md:static top-0 left-0 z-[2000] ${
                 !toggle
-                  ? ` left-[-100%] ease-in-out duration-650`
-                  : ` left-0 md:left-[-100%] top-[4.2rem] p-1 md:p-0 w-auto md:w-full h-auto md:h-full border-r-[0.1px] border-b-[0.1px] md:border-none rounded-r-[20px] border-[#43fcff] ease-in-out duration-500 md:duration-0 backdrop-filter backdrop-blur-md bg-[#000300]/60 md:bg-transparent`
-              }  md:static`}
+                  ? 'pointer-events-none opacity-0'
+                  : 'pointer-events-auto opacity-100'
+              } 
+              md:opacity-100 md:pointer-events-auto
+              w-screen h-screen md:w-auto md:h-auto
+              bg-black/85 backdrop-blur-md md:bg-transparent md:backdrop-blur-none
+              transition-all ease-in-out duration-500`}
             >
               {navLink.map((link) => (
                 <Link
