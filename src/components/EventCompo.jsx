@@ -17,7 +17,7 @@ const EventCompo = (props) => {
   let scale = useTransform(scrollYProgress, [0, 1], ["100%", "200%"]);
   return (
     <>
-      <main className="w-full h-auto overflow-hidden -translate-y-[70px] -mb-[70px] border-[px]">
+      <main className="w-full h-auto overflow-hidden -translate-y-[70px] -mb-[70px] border-[px] px-2 sm:px-4">
         <section ref={ref.current} className="relative w-full h-[60vh]">
           <motion.div
             className="inset-0 absolute z-0 bg-[#000300]"
@@ -53,7 +53,7 @@ const EventCompo = (props) => {
           </div>
           <section
             id="contact"
-            className="w-full h-auto bg-black border-[px] px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] overflow-hidden"
+            className="w-full h-auto bg-black border-[px] px-2 sm:px-4 md:px-8 lg:px-16 overflow-hidden"
           >
             <p className="mt-4 mb-4 text-[20px] md:text-[25px] text-justify">
               {props.eventDec}

@@ -2,11 +2,106 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-import withAutoplay from "react-awesome-slider/dist/autoplay";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import { sliderImgs } from "@/context/data";
-// import styles from "react-awesome-slider/dist/custom-animations/fold-out-animation.css";
+
+
+const galleryPhotos = [
+  { id: 1, src: '/gallery/photo1.jpg', alt: 'Photo 1' },
+  { id: 2, src: '/gallery/photo2.jpg', alt: 'Photo 2' },
+  { id: 3, src: '/gallery/photo3.jpg', alt: 'Photo 3' },
+  { id: 4, src: '/gallery/photo4.jpg', alt: 'Photo 4' },
+  { id: 5, src: '/gallery/photo5.jpg', alt: 'Photo 5' },
+];
+
+const GallerySlider = () => {
+  const [index, setIndex] = React.useState(0);
+  const total = galleryPhotos.length;
+
+  const handlePrev = () => {
+    setIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  };
+  const handleNext = () => {
+    setIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+  };
+
+  // Calculate indexes for left and right preview images
+  const leftIdx = (index === 0 ? total - 1 : index - 1);
+  const rightIdx = (index === total - 1 ? 0 : index + 1);
+
+  return (
+    <div className="relative w-full flex items-center justify-center min-h-[350px] md:min-h-[450px]">
+      {/* Coverflow Images with drag/swipe support */}
+      <div
+        className="relative flex flex-col sm:flex-row items-center justify-center w-full max-w-full sm:w-[90vw] sm:max-w-[1100px] h-auto min-h-[220px] md:min-h-[450px] select-none cursor-pointer px-2 sm:px-0"
+        onMouseDown={(e) => {
+          e.preventDefault();
+          const startX = e.clientX;
+          let moved = false;
+          const onMouseMove = (moveEvent) => {
+            moved = true;
+          };
+          const onMouseUp = (upEvent) => {
+            if (moved) {
+              const diff = upEvent.clientX - startX;
+              if (diff > 60) setIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+              else if (diff < -60) setIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+            }
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('mouseup', onMouseUp);
+          };
+          window.addEventListener('mousemove', onMouseMove);
+          window.addEventListener('mouseup', onMouseUp);
+        }}
+        onTouchStart={(e) => {
+          const startX = e.touches[0].clientX;
+          let moved = false;
+          const onTouchMove = (moveEvent) => {
+            moved = true;
+          };
+          const onTouchEnd = (endEvent) => {
+            if (moved) {
+              const endX = endEvent.changedTouches[0].clientX;
+              const diff = endX - startX;
+              if (diff > 60) setIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+              else if (diff < -60) setIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+            }
+            window.removeEventListener('touchmove', onTouchMove);
+            window.removeEventListener('touchend', onTouchEnd);
+          };
+          window.addEventListener('touchmove', onTouchMove);
+          window.addEventListener('touchend', onTouchEnd);
+        }}
+      >
+        {/* Left (previous) image */}
+        <Image
+          src={galleryPhotos[leftIdx].src}
+          alt={galleryPhotos[leftIdx].alt}
+          width={320}
+          height={260}
+          className="absolute left-[10%] sm:left-1/4 md:left-[18%] top-1/2 -translate-y-1/2 w-[120px] h-[90px] sm:w-[180px] sm:h-[130px] md:w-[320px] md:h-[260px] rounded-lg shadow-lg object-cover border border-[#43fcff]/20 opacity-70 scale-90 z-10 transition-all duration-500"
+          style={{ transform: 'translateX(-60%) scale(0.88) rotateY(20deg)' }}
+        />
+        {/* Center (active) image */}
+        <Image
+          src={galleryPhotos[index].src}
+          alt={galleryPhotos[index].alt}
+          width={600}
+          height={420}
+          className="relative z-20 w-[220px] h-[160px] sm:w-[320px] sm:h-[220px] md:w-[600px] md:h-[420px] rounded-xl shadow-2xl object-cover border-2 border-[#43fcff] scale-105 transition-all duration-500"
+          style={{ boxShadow: '0 10px 50px #43fcff33' }}
+        />
+        {/* Right (next) image */}
+        <Image
+          src={galleryPhotos[rightIdx].src}
+          alt={galleryPhotos[rightIdx].alt}
+          width={320}
+          height={260}
+          className="absolute right-[10%] sm:right-1/4 md:right-[18%] top-1/2 -translate-y-1/2 w-[120px] h-[90px] sm:w-[180px] sm:h-[130px] md:w-[320px] md:h-[260px] rounded-lg shadow-lg object-cover border border-[#43fcff]/20 opacity-70 scale-90 z-10 transition-all duration-500"
+          style={{ transform: 'translateX(60%) scale(0.88) rotateY(-20deg)' }}
+        />
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -16,11 +111,19 @@ const About = () => {
           About us
         </h3>
         <div className="w-full h-auro border-[px] overflow-hidden flex flex-col gap-2 ease-in-out duration-300">
-          <AboutByteIT />
-          <EventBtn />
-          <ImageSlider />
-          <AboutCollege />
+          <AboutTechtopia />
+          
+          {/* Gallery Section */}
+          <div className="w-full flex flex-col items-center mt-12 mb-6">
+            <h2 className="text-[#43fcff] font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center tracking-wide mb-8" style={{ fontFamily: 'Play, sans-serif', letterSpacing: '0.08em' }}>
+              OUR GALLERY
+            </h2>
+            {/* TODO: Insert event photos here. Example below: */}
+            <GallerySlider />
+          </div>
 
+
+          <AboutCollege />
           <EventVenue />
         </div>
       </div>
@@ -30,35 +133,43 @@ const About = () => {
 
 export default About;
 
-export const AboutByteIT = () => {
+export const AboutTechtopia = () => {
   return (
     <>
       <div className="w-full h-auto flex flex-col gap-4 md:gap-0">
-        <div className="w-full h-auto flex flex-col md:flex-row gap-2 justify-center">
-          <div className="w-full md:w-1/2 h-full flex items-center justify-center">
+        <div className="w-full h-auto flex flex-col md:flex-row gap-6 md:gap-2 justify-center px-2 sm:px-4">
+          <div className="w-full md:w-1/2 h-full flex items-center justify-center mb-8">
             <Image
-              src={"/byteITLogo.png"}
+              src={"/techtopailog.png"}
               width={500}
               height={500}
               alt="Techtopia Logo"
               className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] mr-1 ease-in-out duration-300"
             />
           </div>
-          <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-4 md:px-8 lg:px-12">
+          <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-2 sm:px-4 md:px-8 lg:px-12">
             <h1 className="text-2xl md:text-3xl text-[#43fcff]">
               ABOUT Techtopia
             </h1>
             <div className="text-[15px] md:text-[18px] text-justify ease-in-out duration-500">
               <span>
-              Techtopia is the flagship fest of the Department of Computer Science & Information Technology at Patkar-Varde College, designed to ignite passion and creativity in the field of Information Technology. 
-              This dynamic and intellectually stimulating event serves as a platform for students to explore cutting-edge innovations, showcase their technical talents, and engage in healthy competition. 
-              From coding challenges and tech quizzes, Techtopia fosters a spirit of innovation, teamwork, and critical thinking. 
-              More than just a fest, it is a celebration of the future of technology—empowering students to dream big, develop real-world skills, and take confident steps toward becoming tomorrow’s tech leaders.
+              Welcome to the ITCS Departmental Fest - a vibrant celebration of innovation, creativity, and technical brilliance! Our annual fest brings together the brightest minds for an exciting lineup of events that include code battles, 
+              technical games, seminars, and hands-on opportunities to build and showcase projects. Whether you&apos;re here to compete, learn, or simply have fun, our fest offers something for everyone. 
+              From thrilling coding challenges to thought-provoking seminars and fun-filled games and entertainment, it&apos;s the perfect platform to demonstrate your skills, explore new ideas, 
+              and connect with like-minded tech enthusiasts.
+              </span>
+            </div>
+            <div className="w-full text-center mt-2 mb-6">
+              <span className="text-[#43fcff] text-lg md:text-2xl font-bold block">
+                Unleash your potential. Join us for TechTopia 2025!
+              </span>
+              <span className="text-white text-base md:text-lg block mt-2 font-medium italic">
+                Where innovation meets inspiration.
               </span>
             </div>
           </div>
         </div>
-        <div className="w-full h-auto flex flex-col justify-center gap-2 px-10 md:px-20">
+        <div className="w-full h-auto flex flex-col justify-center gap-2 px-2 sm:px-6 md:px-10 md:px-20">
           <span className="text-[#53c2be] font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center ease-in-out duration-500">
             WE WOULD LIKE TO INVITE YOU ON A JOURNEY THAT IS FULL OF MESMERIZING
             STORIES AND ARTIFACTS !
@@ -85,7 +196,7 @@ export const AboutCollege = () => {
     <>
       <div className="w-full h-auto flex flex-col gap-1"></div>
       <div className="w-full h-auto border-[px] flex flex-col md:flex-row gap-2 justify-center">
-        <div className="w-full md:w-1/2 h-auto flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-auto flex items-center justify-center mb-8 sm:mb-12">
           <Image
             src={"/patkar_logo.png"}
             width={500}
@@ -94,22 +205,22 @@ export const AboutCollege = () => {
             className="w-[250px] h-auto sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] mr-1 ease-in-out duration-300"
           />
         </div>
-        <div className="w-full md:w-1/2 h-auto border-[px] flex flex-col justify-center px-2 md:px-4 lg:px-8">
+        <div className="w-full md:w-1/2 h-auto border-[px] flex flex-col justify-center px-2 sm:px-4 md:px-8 space-y-4 md:space-y-6">
           <h1 className="text-2xl md:text-3xl text-[#43fcff]">ABOUT COLLEGE</h1>
           <h1 className="text-lg md:text-xl text-[#43fcff] mt-5">
             Patkar-Varde College :
           </h1>
-          <span className="flex text-justify text-[14px] md:text-[16px] lg:text-[18px] ease-in-out duration-500">
-          Chikitsak Samuha's Patkar-Varde College, established in 1964 and located in the heart of Goregaon (West), Mumbai, is a reputed institution affiliated with the University of Mumbai. 
-          With a legacy of academic excellence, the college offers a wide range of undergraduate and postgraduate programs across Arts, Science, and Commerce streams. 
-          Over the years, it has expanded to include professional and self-financed courses such as B.Sc. (Information Technology), B.Sc. (Computer Science), B.M.S., B.M.M., B.Sc. (Biotechnology), along with M.Sc. (Information Technology) and M.Sc. (Computer Science). 
-          The college is also recognized as a Research Centre for Ph.D. programs in several subjects. Committed to holistic education, 
-          Patkar-Varde College nurtures students through co-curricular, cultural, and extension activities while promoting academic rigor, digital innovation, and industry readiness.
+          <span className="text-[14px] md:text-[16px] lg:text-[18px] ease-in-out duration-500">
+          Chikitsak Samuha&apos;s Patkar Varde College is affiliated with the University of Mumbai and is located in Mumbai&apos;s Western suburbs. 
+          It has achieved an &apos;A+&apos; NAAC accreditation with an institutional score of 3.53, ISO certification, and numerous recognitions such as 
+          India&apos;s Education Excellence Award and the best College Award by the University of Mumbai. Ranked 40th in the Education World India Autonomous College Ranking and 13th in Maharashtra, 
+          our college is committed to providing affordable.
           </span>
+          
         </div>
       </div>
       {/* [57vh] sm:h-[46vh] md:h-[55vh] lg:h-[550px] */}
-      <div className="w-full h-auto border-[px] flex flex-col px-2 md:px-4 lg:px-8">
+      <>
         <span className="text-[14px] md:text-[16px] lg:text-[18px] ease-in-out duration-300 flex text-justify">
         With a vision to empower students through experiential learning and innovation, 
         Mrs. Namrata Kawale-Shinde, Chief Coordinator, Faculty of Technology and Coordinator of the Information Technology department, 
@@ -131,7 +242,8 @@ export const AboutCollege = () => {
           attainment, is our true strength, reminding all of us of our vision
           statement, “Purnata Gauravay” (पूर्णता गौरवाय).
         </span>
-      </div>
+      </>
+
     </>
   );
 };
@@ -141,7 +253,7 @@ export const EventBtn = () => {
     <>
       <div className="w-full h-[10vh] border-[px] flex items-center justify-center">
         <Link
-          href={"/Event"}
+          href={"/events"}
           className="w-auto md:w-[40%] h-[5vh] flex items-center justify-center px-10 border-[0.5px] border-[#43fcff] bg-[#43fcff]/[65%] hover:bg-transparent text-white hover:text-[#43fcff] cursor-pointer rounded-xl ease-in-out duration-300"
         >
           Check out Events
@@ -151,29 +263,7 @@ export const EventBtn = () => {
   );
 };
 
-export const ImageSlider = () => {
-  const AutoplaySlider = withAutoplay(AwesomeSlider);
-  return (
-    <>
-      <div className="w-full h-auto border-[px] flex items-center justify-center">
-        {/* Slider images */}
-        <div className="w-full md:w-[60%] h-auto relativ border-[px] flex items-center justify-center rounded-2xl overflow-hidden">
-          <AutoplaySlider
-            play={true}
-            cancelOnInteraction={false}
-            interval={6000}
-          >
-            {sliderImgs.map((sImgs) => (
-              // <div className="w-full h-full" >
-                <div key={sImgs.id} data-src={sImgs.img} alt={sImgs.title} />
-              // </div>
-            ))}
-          </AutoplaySlider>
-        </div>
-      </div>
-    </>
-  );
-};
+
 
 export const EventVenue = () => {
   return (

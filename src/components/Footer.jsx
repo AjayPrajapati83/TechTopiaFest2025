@@ -5,7 +5,7 @@ const Footer = (props) => {
   return (
     <>
       <footer>
-        <div className="footer border-t-[.5px] rounded-md border-[#43fcff]/50 flex flex-col sm:flex-row justify-between items-center gap-1 p-2 ease-in-out duration-300 md:duration-500">
+        <div className="footer border-t-[.5px] rounded-md border-[#43fcff]/50 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 p-2 sm:p-4 ease-in-out duration-300 md:duration-500">
           <div className="row text-[gray] flex flex-row gap-3 sm:scale-75 sm:hidden duration-300 ease-in-out">
             {footerIcon.map((icon) => (
               <a
@@ -24,14 +24,12 @@ const Footer = (props) => {
               href={"/"}
               className=" text-4xl hover:text-[#43fcff] hover:scale-105 ease-in-out duration-300"
             >
-              {props.title}
+              TechTopia
             </Link>
           </div>
-          <span className="row text-[gray] flex flex-row gap-3 duration-300 sm:scale-75 text-sm sm:ml-3">
-            <span className="scale-125 -mr-2.5">©</span>2023 {props.title}
-            <span className="scale-150 -mr-1 -ml-1">||</span>All rights
-            reserved by GD.
-          </span>
+          <span className="row text-[gray] duration-300 sm:scale-75 text-sm sm:ml-3">
+  2025 TechTopia | All rights reserved by AP.
+</span>
           <div className="row text-[gray] hidden sm:flex flex-row gap-3 duration-300 ease-in-out">
             {footerIcon.map((icon) => (
               <a
@@ -59,10 +57,5 @@ const footerIcon = [
     id: 1,
     className: "fa fa-instagram text-pink-500 hover:text-pink-600",
     url: "https://www.instagram.com/techtopiafest/",
-  },
-  {
-    id: 2,
-    className: "fa fa-youtube text-red-500 hover:text-red-700",
-    url: "https://www.youtube.com/@techtopiafest/featured",
   },
 ];

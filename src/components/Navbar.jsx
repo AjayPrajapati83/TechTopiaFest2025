@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <Headroom>
-        <div className="containerNav backdrop-filter backdrop-blur-sm px-5 w-full h-[70px] flex justify-between items-center gap-5 z-10">
+        <div className="containerNav backdrop-filter backdrop-blur-sm px-2 sm:px-5 w-full h-[70px] flex justify-between items-center gap-4 sm:gap-5 z-10">
           {" "}
           {/*  w-[80%] fixed */}
           <div className="open md:hidden ">
@@ -31,14 +31,14 @@ const Navbar = () => {
             className="flex flex-row items-center animate-fade-in-down hover:text-[#43fcff] ease-in-out duration-500"
           >
             <Image
-              src={"/byteITLogo.png"}
+              src={"/icon.png"}
               width={50}
               height={50}
-              alt="Byte IT Logo"
+              alt="TechTopia Logo"
               className="w-10 h-10 mr-1"
             />
             <span className="self-center text-xl font-semibold text-[#43fcff]">
-              BYTE-IT
+              TechTopia
             </span>
           </Link>
           <div className="flex items-center">
@@ -66,11 +66,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <Link href={"/Event"} className="ml-2">
-              <button className="eventBtn p-[4px] border-[0.5px] border-[#43fcff] w-[6rem] bg-[#43fcff]/[60%] hover:bg-transparent text-white hover:text-[#43fcff] cursor-pointer rounded-[5px] ease-in-out duration-300">
-                Events
-              </button>
-            </Link>
+            
           </div>
         </div>
       </Headroom>

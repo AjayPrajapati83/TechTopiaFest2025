@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="w-full h-auto overflow-hidden -translate-y-[70px] -mb-[70px] border-[px] flex flex-col gap-5">
+      <main className="w-full h-auto overflow-hidden -translate-y-[70px] -mb-[70px] border-[px] flex flex-col gap-5 px-2 sm:px-4">
         <section ref={ref.current} className="relative w-full h-screen">
           <motion.div
             className="inset-0 absolute z-0 bg-[#000300]"
@@ -48,7 +48,7 @@ export default function Home() {
           </div>
           <section
             id="aboutus"
-            className="w-full h-auto z-50 bg-black border-[px] px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] overflow-hidden"
+            className="w-full h-auto z-50 bg-black border-[px] px-2 sm:px-4 md:px-8 lg:px-16 overflow-hidden"
           >
             {/*  scrollDiv overflow-y-scroll scroll-snap-type-x-mandatory */}
             <About />
@@ -56,7 +56,7 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="w-full h-auto bg-black border-[px] px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] relative z-50 overflow-hidden"
+          className="w-full h-auto bg-black border-[px] px-2 sm:px-4 md:px-8 lg:px-16 relative z-50 overflow-hidden"
         >
           <Contact />
         </section>
@@ -74,7 +74,7 @@ export const HeroContent = () => {
         </div>
         <div className="text-[25px] md:text-[30px] lg:text-[35px] font-bold leading-[36px] md:leading-[40px] lg:leading-[45px] ease-in-out duration-200">
           <div className="w-full animate-slideDown text-[#53c28b] flex flex-col">
-            <span>Department of omputer Science & Information Technology</span>
+            <span>Department of Computer Science & Information Technology</span>
           </div>
         </div>
         <div className="-mt-4 text-[80px] animate-slideDown text-[#43fcff] flex flex-col">
@@ -115,10 +115,10 @@ export const Contact = () => {
         <div className="w-full h-auto flex flex-col">
           <h3 className="text-base md:text-lg lg:text-xl">Call Us :</h3>
           <span className="text-[#43fcff] text-sm md:text-base lg:text-lg">
-            Shree Pillay : +91 9137954413
+            Shree Pillay : +91 7304383036
           </span>
           <span className="text-[#43fcff] text-sm md:text-base lg:text-lg">
-            Abhishek Jaiswal : +91 8452043058
+            Pratham Shinde : +91 9321882776
           </span>
         </div>
         <div className="w-full h-auto flex flex-row gap-2 items-center">
