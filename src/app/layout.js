@@ -19,6 +19,8 @@ export const metadata = {
   description: 'TechTopia next app',
 }
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -36,12 +38,12 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           precedence="default"
         />
-
       </head>
       <body className={fredoka.className + ' ' + play.className}>
         <Navbar />
         {children}
         <Footer title='TechTopia'/>
+        <SpeedInsights />
       </body>
     </html>
   )
