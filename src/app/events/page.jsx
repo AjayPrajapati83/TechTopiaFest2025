@@ -234,7 +234,7 @@ const Events = () => {
         <ol className="list-decimal pl-6 text-gray-300 text-lg md:text-xl">
   <li>Participation will only be allowed on a valid college ID card or a college fee receipt.</li>
   <li>Any kind of obscenity, vulgarity, misbehaviour, or slang language will not be tolerated.</li>
-  <li>The decision of the organizing committee, referee, and judge's for any of the competitions is final and binding.</li>
+  <li>The decision of the organizing committee, referee, and judge&apos;s for any of the competitions is final and binding.</li>
   <li>The Organizing Committee has the authority to create, change, modify, or update any round or rules and regulations before, during, or after the event without any prior notice.</li>
   <li>Damage to any college property or any kind of misbehaviour will be treated as a serious offence.</li>
   <li>Carry valuables at your own risk. Team Techtopia will not be responsible for any damage, theft, or loss of your valuable and confiscated items.</li>
@@ -246,7 +246,7 @@ const Events = () => {
 <ol className="list-decimal pl-6 text-gray-300 text-lg md:text-xl" start="10">
   <li>Tube tops, low backs, low necks, bralettes, and tops above the navel beyond a considerable length will not be permitted.</li>
   <li>Boy shorts, daisy dukes, dolphin shorts, micro/miniskirts, leotards, and bottoms above the knee will not be permitted.</li>
-  <li>All costumes are subjected to scrutiny and the judge's discretion will be final.</li>
+  <li>All costumes are subjected to scrutiny and the judge&apos;s discretion will be final.</li>
 </ol>
       </div>
       </div>

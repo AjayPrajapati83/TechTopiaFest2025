@@ -2,7 +2,20 @@
 // const withSass = require('@zeit/next-sass');
 const nextConfig = {
     images: {
-        domains: ["images.pexels.com", 'oaidalleapiprodscus.blob.core.windows.net',],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'oaidalleapiprodscus.blob.core.windows.net',
+                port: '',
+                pathname: '/**',
+            },
+        ],
     },
 }
 

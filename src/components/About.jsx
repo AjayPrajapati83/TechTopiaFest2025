@@ -199,7 +199,7 @@ export const AboutTechtopia = () => {
           </p>
           
           <p className="text-base sm:text-lg font-sans text-gray-200 leading-relaxed">
-            Whether you're here to compete, learn, or simply have fun, our fest offers something for everyone. From thrilling coding challenges to thought-provoking seminars and fun-filled games and entertainment, it's the perfect platform to demonstrate your skills, explore new ideas, and connect with like-minded tech enthusiasts.
+            Whether you&apos;re here to compete, learn, or simply have fun, our fest offers something for everyone. From thrilling coding challenges to thought-provoking seminars and fun-filled games and entertainment, it&apos;s the perfect platform to demonstrate your skills, explore new ideas, and connect with like-minded tech enthusiasts.
           </p>
         </div>
 
@@ -272,7 +272,7 @@ export const AboutCollege = () => {
 
         <div className="space-y-5">
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
-            Chikitsak Samuha's Patkar Varde College is affiliated with the University of Mumbai and is located in Mumbai's Western suburbs. It has achieved an 'A+' NAAC accreditation with an institutional score of 3.53, ISO certification, and numerous recognitions such as India's Education Excellence Award and the best College Award by the University of Mumbai. Ranked 40th in the Education World India Autonomous College Ranking and 13th in Maharashtra, our college is committed to providing affordable quality education and fostering academic excellence.
+            Chikitsak Samuha&apos;s Patkar Varde College is affiliated with the University of Mumbai and is located in Mumbai&apos;s Western suburbs. It has achieved an &apos;A+&apos; NAAC accreditation with an institutional score of 3.53, ISO certification, and numerous recognitions such as India&apos;s Education Excellence Award and the best College Award by the University of Mumbai. Ranked 40th in the Education World India Autonomous College Ranking and 13th in Maharashtra, our college is committed to providing affordable quality education and fostering academic excellence.
           </p>
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
@@ -280,7 +280,7 @@ export const AboutCollege = () => {
           </p>
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
-            Under their able guidance, Techtopia quickly gained recognition for its unique blend of tech competitions, workshops, project showcases, and interactive sessions that bridge the gap between academic learning and industry trends. The fest has become a hub for budding technocrats to network, collaborate, and gain exposure to real-world challenges, all within an atmosphere of healthy competition and spirited innovation. Their commitment to excellence and student development has made Techtopia a milestone event in the college's academic calendar, setting new standards for student-led initiatives in the field of Information Technology and Computer Science.
+            Under their able guidance, Techtopia quickly gained recognition for its unique blend of tech competitions, workshops, project showcases, and interactive sessions that bridge the gap between academic learning and industry trends. The fest has become a hub for budding technocrats to network, collaborate, and gain exposure to real-world challenges, all within an atmosphere of healthy competition and spirited innovation. Their commitment to excellence and student development has made Techtopia a milestone event in the college&apos;s academic calendar, setting new standards for student-led initiatives in the field of Information Technology and Computer Science.
           </p>
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
@@ -288,7 +288,7 @@ export const AboutCollege = () => {
           </p>
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed italic">
-            Simple, hard-working students imbibed with a sense of educational attainment, is our true strength, reminding all of us of our vision statement, <span className="not-italic font-medium">"Purnata Gauravay" (पूर्णता गौरवाय)</span>.
+            Simple, hard-working students imbibed with a sense of educational attainment, is our true strength, reminding all of us of our vision statement, <span className="not-italic font-medium">&quot;Purnata Gauravay&quot;</span>.
           </p>
         </div>
       </div>
