@@ -50,9 +50,13 @@ const Navbar = () => {
               } 
               md:opacity-100 md:pointer-events-auto
               w-screen h-screen md:w-auto md:h-auto
-              bg-black/85 backdrop-blur-md md:bg-transparent md:backdrop-blur-none
+              bg-black/95 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none
               transition-all ease-in-out duration-500`}
             >
+              {/* Overlay for better readability on mobile */}
+              {toggle && (
+                <div className="absolute top-0 left-0 w-full h-full bg-black/95 z-[-1]" />
+              )}
               {navLink.map((link) => (
                 <Link
                   key={link.id}

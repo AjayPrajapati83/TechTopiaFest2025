@@ -13,7 +13,6 @@ const play = Play({
   subsets: ['latin'],
   display: 'swap',
 })
-export const runtime = "edge";
 
 export const metadata = {
   title: 'TechTopia',

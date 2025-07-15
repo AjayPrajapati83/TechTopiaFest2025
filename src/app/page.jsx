@@ -74,7 +74,7 @@ export const HeroContent = () => {
         </div>
         <div className="text-[25px] md:text-[30px] lg:text-[35px] font-bold leading-[36px] md:leading-[40px] lg:leading-[45px] ease-in-out duration-200">
           <div className="w-full animate-slideDown text-[#53c28b] flex flex-col">
-            <span>Department of Computer Science & Information Technology</span>
+            <span>Department of Computer Science <br className="block md:hidden" /> & Information Technology</span>
           </div>
         </div>
         <div 
@@ -91,7 +91,7 @@ export const HeroContent = () => {
         </div>
         <hr className="border-[#43fcff] w-[70%] md:w-[60%] lg:w-[60vh] h-[3px] shadow-lg border-solid border-[0.5px] rounded-lg ease-in-out duration-300" />
         <div className="mt-4 text-[15px] md:text-[20px] ease-in-out duration-700">
-          <span>2025-26</span>
+          <span>26th July 2025</span>
         </div>
         <div className="mt-4 text-[15px] md:text-[20px] flex flex-col ease-in-out duration-700">
           <span>Securely Digitalize,</span>
@@ -118,7 +118,7 @@ export const Contact = () => {
         <div className="w-full h-auto flex flex-col">
           <h3 className="text-base md:text-lg lg:text-xl">E-mail Us :</h3>
           <span className="text-[#43fcff] text-sm md:text-base lg:text-lg">
-            techtopiafest@gmail.com
+            pvc.techtopia@gmail.com
           </span>
         </div>
         <div className="w-full h-auto flex flex-col">

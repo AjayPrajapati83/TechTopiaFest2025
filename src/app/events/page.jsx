@@ -9,21 +9,20 @@ const eventPlaceholders = [
     name: "BGMI",
     image: "/events/bgmi.png",
     rules: [
-      "1)Teams must have 4 player's each.",
-      "2)Finger sleeves are allowed.",
-      "3)Air triggers or external triggers are not allowed.",
-      "4)Hacking is strictly prohibited.",
-      "5)Ensure that the language used is appropriate and respectful throughout the game.",
-      "6)Any potential issues like hate or harassment will result in disqualification of the whole team.",
-      "7)Participants should arrive 15 min prior.",
-      "8)Participants should bring their own device.",
-      "9)Participants should have strong internet connection."
+      "Teams must have 4 players each.",
+      "Finger sleeves are allowed.",
+      "Air triggers or external triggers are not allowed.",
+      "Hacking is strictly prohibited.",
+      "Ensure that the language used is appropriate and respectful throughout the game. Any potential issues like hate or harassment will result in disqualification of the whole team.",
+      "Participants should arrive 15 min prior.",
+      "Participants should bring their own device.",
+      "Participants should have strong internet connection."
     ],
     eligibility: [
-      "1)Age limit: 16 years and above.",
-      "2)Each team must have exactly 4 members (no solo/duo entries allowed).",
-      "3)Participants must use their own mobile devices (no emulator/PC play allowed).",
-      "4)Only official BGMI app must be used."
+      "Age limit: 16 years and above.",
+      "Each team must have exactly 4 members (no solo/duo entries allowed).",
+      "Participants must use their own mobile devices (no emulator/PC play allowed).",
+      "Only official BGMI app must be used."
     ],
     timings: "9:30am - 3:00pm",
     fees: "200Rs",
@@ -34,14 +33,14 @@ const eventPlaceholders = [
     name: "KEYBOARD WAR",
     image: "/events/keyboard.png",
     rules: [
-      "1Time Limit:",
-      "i)Each round has a strict time limit (e.g., 10-15 minutes depending on complexity).",
-      "ii)Late submissions will lead to disqualification from that round.",
-      "2)Disqualification Criteria:",
-      "i)Copying from other teams or any kind of malpractice.",
-      "ii)Disruptive behavior during the event.",
-      "iii)Ignoring instructions from organizers.",
-      "iv)Use of Internet is restricted as per event rules.",
+      "Time Limit:",
+      "Each round has a strict time limit (e.g., 10-15 minutes depending on complexity).",
+      "Late submissions will lead to disqualification from that round.",
+      "Disqualification Criteria:",
+      "Copying from other teams or any kind of malpractice.",
+      "Disruptive behavior during the event.",
+      "Ignoring instructions from organizers.",
+      "Use of Internet is restricted as per event rules.",
       "NOTE:",
       "DETAILS ABOUT THE EVENT WOULD BE DISCLOSED ON THE DAY OF THE EVENT."
     ],
@@ -53,18 +52,18 @@ const eventPlaceholders = [
   {
     id: 3,
     name: "RELAY CODE",
-    image: "/events/relayCode.png",
+    image: "/events/relaycode.png", 
     rules: [
-      "1)Round one will be conducted of about 7 mins.",
-      "2)Participants who complete the round one phase within the given time limit will be selected for the second round.",
-      "3)Second round has a time limit of 15-20 minutes; the one who completes within the time limit is the winner.",
-      "4)Each player's will either write 5 lines of code or for 2 mins; after that, they will have to strictly swap their positions. The one who doesn't't follow this rule will get disqualified.",
+      "Round one will be conducted of about 7 mins.",
+      "Participants who complete the round one phase within the given time limit will be selected for the second round.",
+      "Second round has a time limit of 15-20 minutes; the one who completes within the time limit is the winner.",
+      "Each players will either write 5 lines of code or for 2 mins; after that, they will have to strictly swap their positions. The one who doesn't follow this rule will get disqualified.",
       "NOTE:",
       "DETAILS ABOUT THE EVENT WOULD BE DISCLOSED ON THE DAY OF THE EVENT."
     ],
     eligibility: [
-      "1)Open to all students with a basic knowledge of programming and IT concepts.",
-      "2)Any programming language used in the game will be announced in advance."
+      "Open to all students with a basic knowledge of programming and IT concepts.",
+      "Any programming language used in the game will be announced in advance."
     ],
     timings: "12:00pm - 2:00pm",
     fees: "80Rs",
@@ -75,12 +74,12 @@ const eventPlaceholders = [
     name: "BUGSMASH",
     image: "/events/bugsmash.png",
     rules: [
-      "1)Each round will provide a code snippet with multiple bugs—syntax, logical, and/or runtime.",
-      "2)Participants must debug the code and ensure it runs successfully with the expected output.",
-      "3)The language for each round will be pre-decided and announced at the start of that round.",
-      "4)No external help or browsing is allowed. Offline resources like personal notes are also not allowed.",
-      "5)Use only the provided software/tools; switching environments is not permitted.",
-      "6)Participants must submit the corrected code along with the correct output before time runs out.",
+      "Each round will provide a code snippet with multiple bugs—syntax, logical, and/or runtime.",
+      "Participants must debug the code and ensure it runs successfully with the expected output.",
+      "The language for each round will be pre-decided and announced at the start of that round.",
+      "No external help or browsing is allowed. Offline resources like personal notes are also not allowed.",
+      "Use only the provided software/tools; switching environments is not permitted.",
+      "Participants must submit the corrected code along with the correct output before time runs out.",
       "NOTE:",
       "DETAILS ABOUT THE EVENT WOULD BE DISCLOSED ON THE DAY OF THE EVENT."
     ],
@@ -94,13 +93,13 @@ const eventPlaceholders = [
     name: "DESIGNSCAPE",
     image: "/events/credesignscape.png",
     rules: [
-      "1)Participants will be given a theme or topic for design.",
-      "2)They need to create a design using Canva within the given time limit.",
-      "3)The design should meet the theme requirements.",
-      "4)Originality and creativity will be judge'sd.",
-      "5)The participant with the best design wins.",
-      "6)Using of Premium Version of Canva leads to Disqualification.",
-      "7)Participants must submit their designs in the specified format."
+      "Participants will be given a theme or topic for design.",
+      "They need to create a design using Canva within the given time limit.",
+      "The design should meet the theme requirements.",
+      "Originality and creativity will be judge's discretion.",
+      "The participant with the best design wins.",
+      "Using of Premium Version of Canva leads to Disqualification.",
+      "Participants must submit their designs in the specified format."
     ],
     eligibility: "Open to all students with Designing Skills",
     timings: "1:30pm - 3:00pm",
@@ -112,18 +111,18 @@ const eventPlaceholders = [
     name: "64SQUARECLASH",
     image: "/events/chess.png",
     rules: [
-      "1) Touch-Move Rule: If a player's touches a piece, they must move it (if a legal move exists). If an opponent's's piece is touched, it must be captured if possible.",
-      "2) Illegal Moves: Any illegal move results in a warning. Two illegal moves may lead to loss.",
-      "3) Time Control: Each player's will have 10 minutes on their clock. If a player's's time runs out, they lose the game (unless the opponent's has no mating material).",
-      "4) Touching the Clock: Players must press their clock with the same hand used to move the piece. Pressing the opponent's's clock is not allowed.",
-      "5) Arbiter's's Decision: In all disputes or unclear situations, the arbiter's decision will be final.",
-      "6) No External Help: Players must not use any electronic devices or receive help from others during the game.",
+      "Touch-Move Rule: If a players touches a piece, they must move it (if a legal move exists). If an opponents's piece is touched, it must be captured if possible.",
+      "Illegal Moves: Any illegal move results in a warning. Two illegal moves may lead to loss.",
+      "Time Control: Each players will have 10 minutes on their clock. If a players's time runs out, they lose the game (unless the opponents has no mating material).",
+      "Touching the Clock: Players must press their clock with the same hand used to move the piece. Pressing the opponents's clock is not allowed.",
+      "Arbiter's's Decision: In all disputes or unclear situations, the arbiter's decision will be final.",
+      "No External Help: Players must not use any electronic devices or receive help from others during the game.",
       "NOTE:",
       "DETAILS ABOUT THE EVENT WOULD BE DISCLOSED ON THE DAY OF THE EVENT."
     ],
     eligibility: [
-      "1)Open to all students.",
-      "2)Basic understanding of chess rules is required."
+      "Open to all students.",
+      "Basic understanding of chess rules is required."
     ],
     timings: "1:30pm - 3:00pm",
     fees: "40Rs",
@@ -134,12 +133,12 @@ const eventPlaceholders = [
     name: "REELOVATION",
     image: "/events/reelmaking.png",
     rules: [
-      "1)The reel must comprise of all the events (Seminar, Technical Games and Non-Technical Games). 10-15 minutes time will be permitted for covering each gaming event.",
-      "2)The reel must be uploaded before 1 hour prior to the end of the last game (whichever is later).",
-      "3)The reel must be tagged & mentioned to @techtopiafest and @patkar_ites Instagram handle with a suitable caption.",
-      "4)Only Smartphones are allowed.",
-      "5)Any editing software is allowed, but it should not be a premium version.",
-      "6)Video references or templates are not allowed."
+      "The reel must comprise of all the events (Seminar, Technical Games and Non-Technical Games). 10-15 minutes time will be permitted for covering each gaming event.",
+      "The reel must be uploaded before 1 hour prior to the end of the last game (whichever is later).",
+      "The reel must be tagged & mentioned to @techtopiafest and @patkar_ites Instagram handle with a suitable caption.",
+      "Only Smartphones are allowed.",
+      "Any editing software is allowed, but it should not be a premium version.",
+      "Video references or templates are not allowed."
     ],
     eligibility: "Open to all students with Videography & Editing Skills.",
     timings: "9:30am - 3:00pm",
@@ -192,32 +191,32 @@ const Events = () => {
               <Image src={event.image} alt={event.name} width={400} height={520} className="rounded-lg object-cover" />
             </div>
             <div className="md:w-2/3 flex flex-col gap-3 p-6">
-              <h2 className="text-2xl font-bold text-[#43fcff]">{event.name}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#43fcff] mb-2">{event.name}</h2>
               <div className="flex flex-col gap-1">
-  <span className="font-semibold">Rules:</span>
+  <span className="font-semibold text-xl md:text-2xl">Rules:</span>
   {Array.isArray(event.rules) ? (
     <ol className="list-decimal pl-5 text-gray-300">
       {event.rules.map((rule, idx) => (
-        <li key={idx}>{typeof rule === 'string' ? rule.replace(/^\d+\)?\s*/, "").replace(/'/g, "&#39;") : rule}</li>
+        <li key={idx}>{typeof rule === 'string' ? rule.replace(/&#39;/g, "'").replace(/&amp;/g, "&") : rule}</li>
       ))}
     </ol>
   ) : (
-    <p className="text-gray-300">{event.rules.replace(/'/g, "&#39;")}</p>
+    <p className="text-gray-300">{event.rules.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}</p>
   )}
 </div>
               <div className="flex flex-col gap-1">
-  <span className="font-semibold">Eligibility:</span>
+  <span className="font-semibold text-xl md:text-2xl">Eligibility:</span>
   {Array.isArray(event.eligibility) ? (
     <ol className="list-decimal pl-5 text-gray-300">
       {event.eligibility.map((item, idx) => (
-        <li key={idx}>{typeof item === 'string' ? item.replace(/^\d+\)?\s*/, "").replace(/'/g, "&#39;") : item}</li>
+        <li key={idx}>{typeof item === 'string' ? item.replace(/&#39;/g, "'").replace(/&amp;/g, "&") : item}</li>
       ))}
     </ol>
   ) : (
-    <p className="text-gray-300">{event.eligibility.replace(/'/g, "&#39;")}</p>
+    <p className="text-gray-300">{event.eligibility.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}</p>
   )}
 </div>
-              <div className="flex flex-row gap-8">
+              <div className="flex flex-row gap-8 text-lg md:text-xl font-semibold mt-4">
                 <div>
                   <span className="font-semibold">Timings:</span> <span className="text-gray-300">{event.timings}</span>
                 </div>
@@ -231,11 +230,11 @@ const Events = () => {
         ))}
       </div>
       <div className="w-full max-w-5xl mt-16 p-6 bg-[#181f22] rounded-xl border border-[#43fcff]/40">
-        <h2 className="text-2xl font-bold text-[#43fcff] mb-2">General Rules of Techtopia</h2>
-        <ol className="list-decimal pl-6 text-gray-300">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#43fcff] mb-4">General Rules of Techtopia</h2>
+        <ol className="list-decimal pl-6 text-gray-300 text-lg md:text-xl">
   <li>Participation will only be allowed on a valid college ID card or a college fee receipt.</li>
   <li>Any kind of obscenity, vulgarity, misbehaviour, or slang language will not be tolerated.</li>
-  <li>The decision of the organizing committee, referee, and judge&#39;s for any of the competitions is final and binding.</li>
+  <li>The decision of the organizing committee, referee, and judge's for any of the competitions is final and binding.</li>
   <li>The Organizing Committee has the authority to create, change, modify, or update any round or rules and regulations before, during, or after the event without any prior notice.</li>
   <li>Damage to any college property or any kind of misbehaviour will be treated as a serious offence.</li>
   <li>Carry valuables at your own risk. Team Techtopia will not be responsible for any damage, theft, or loss of your valuable and confiscated items.</li>
@@ -243,11 +242,11 @@ const Events = () => {
   <li>Metal objects like scales/rulers, thick chains, lighters etc. will be confiscated.</li>
   <li>Any other article which is not included in the above but is injurious or harmful will not be allowed inside venue.</li>
 </ol>
-<span className="font-semibold text-[#43fcff] mt-4 block">COSTUME RULES:</span>
-<ol className="list-decimal pl-6 text-gray-300" start="10">
+<span className="font-semibold text-2xl md:text-3xl text-[#43fcff] mt-6 block">COSTUME RULES:</span>
+<ol className="list-decimal pl-6 text-gray-300 text-lg md:text-xl" start="10">
   <li>Tube tops, low backs, low necks, bralettes, and tops above the navel beyond a considerable length will not be permitted.</li>
   <li>Boy shorts, daisy dukes, dolphin shorts, micro/miniskirts, leotards, and bottoms above the knee will not be permitted.</li>
-  <li>All costumes are subjected to scrutiny and the judge&#39;s discretion will be final.</li>
+  <li>All costumes are subjected to scrutiny and the judge's discretion will be final.</li>
 </ol>
       </div>
       </div>
