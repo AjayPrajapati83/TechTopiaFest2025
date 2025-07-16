@@ -27,6 +27,7 @@ const eventPlaceholders = [
     timings: "9:30am - 3:00pm",
     fees: "200Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Classroom 41 & 42",
   },
   {
     id: 2,
@@ -48,6 +49,7 @@ const eventPlaceholders = [
     timings: "12:00pm - 2:00pm",
     fees: "40Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Comp. Lab-1 & lab-2",
   },
   {
     id: 3,
@@ -68,6 +70,7 @@ const eventPlaceholders = [
     timings: "12:00pm - 2:00pm",
     fees: "80Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Comp. Lab-5",
   },
   {
     id: 4,
@@ -87,10 +90,11 @@ const eventPlaceholders = [
     timings: "1:30pm - 2:30pm",
     fees: "40Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Comp. Lab-3",
   },
   {
     id: 5,
-    name: "DESIGNSCAPE",
+    name: "CRESIGNSCAPE",
     image: "/events/credesignscape.png",
     rules: [
       "Participants will be given a theme or topic for design.",
@@ -105,6 +109,7 @@ const eventPlaceholders = [
     timings: "1:30pm - 3:00pm",
     fees: "40Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Comp. Lab-1 & lab-2",
   },
   {
     id: 6,
@@ -127,6 +132,7 @@ const eventPlaceholders = [
     timings: "1:30pm - 3:00pm",
     fees: "40Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Classroom 41A",
   },
   {
     id: 7,
@@ -144,6 +150,7 @@ const eventPlaceholders = [
     timings: "9:30am - 3:00pm",
     fees: "40Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Auditorium",
   },
   {
     id: 8,
@@ -154,6 +161,7 @@ const eventPlaceholders = [
     timings: "11:00am - 1:00pm",
     fees: "50Rs",
     regLink: "https://docs.google.com/forms/d/e/1FAIpQLSfJrcQjLetnKwj23OMNG1jf9Et1mSZwjCpQoA_B8o4IsArnGA/viewform",
+    venue: "Auditorium",
   },
 ];
 
@@ -216,12 +224,18 @@ const Events = () => {
     <p className="text-gray-300">{event.eligibility.replace(/&#39;/g, "'").replace(/&amp;/g, "&")}</p>
   )}
 </div>
-              <div className="flex flex-row gap-8 text-lg md:text-xl font-semibold mt-4">
+              <div className="flex flex-col gap-2 text-lg md:text-xl font-semibold mt-4 items-start">
                 <div>
-                  <span className="font-semibold">Timings:</span> <span className="text-gray-300">{event.timings}</span>
+                  <span className="font-semibold">Timings:</span>
+                  <span className="text-gray-300"> {event.timings}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Fees:</span> <span className="text-gray-300">{event.fees}</span>
+                  <span className="font-semibold">Venue:</span>
+                  <span className="text-gray-300"> {event.venue}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Fees:</span>
+                  <span className="text-gray-300"> {event.fees}</span>
                 </div>
               </div>
               <a href={event.regLink} target="_blank" rel="noopener noreferrer" className="mt-3 w-max px-6 py-2 bg-[#43fcff] text-black font-bold rounded hover:bg-transparent hover:text-[#43fcff] border border-[#43fcff] transition-all">Register</a>

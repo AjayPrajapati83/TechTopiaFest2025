@@ -70,11 +70,15 @@ export const HeroContent = () => {
     <>
       <div className="w-full h-full bg-transparent relative z-20 flex flex-col items-center justify-center text-center ease-in-out duration-300">
         <div className="text-[15px] md:text-[20px] ease-in-out duration-500">
-          <span className="backdrop-filter backdrop-blur-sm border-[0.3px]">Patkar-Varde College&apos;S</span>
+          <span className="backdrop-filter backdrop-blur-sm border-2 border-[#43fcff] font-bold text-[22px] sm:text-[28px] md:text-[32px] lg:text-[36px] px-4 py-1 w-full inline-block tracking-wide rounded-lg" style={{letterSpacing:'0.04em'}}>Patkar-Varde College&apos;S</span>
         </div>
         <div className="text-[25px] md:text-[30px] lg:text-[35px] font-bold leading-[36px] md:leading-[40px] lg:leading-[45px] ease-in-out duration-200">
           <div className="w-full animate-slideDown text-[#53c28b] flex flex-col">
-            <span>Department of Computer Science <br className="block md:hidden" /> & Information Technology</span>
+            <div className="flex flex-col items-center">
+  <span>Department of</span>
+  <span>Computer Science &</span>
+  <span>Information Technology</span>
+</div>
           </div>
         </div>
         <div 

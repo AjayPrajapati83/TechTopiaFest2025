@@ -1,138 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import TechFestAnimatedSVG from "../svgs/TechFestAnimatedSVG";
 
 
 
-const galleryPhotos = [
-  { id: 1, src: '/gallery/photo1.jpg', alt: 'Tech Event 1' },
-  { id: 2, src: '/gallery/photo2.jpg', alt: 'Workshop Session' },
-  { id: 3, src: '/gallery/photo3.jpg', alt: 'Hackathon' },
-  { id: 4, src: '/gallery/photo4.jpg', alt: 'Guest Lecture' },
-  { id: 5, src: '/gallery/photo5.jpg', alt: 'Award Ceremony' },
-];
 
-const GallerySlider = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [touchStart, setTouchStart] = React.useState(0);
-  const [touchEnd, setTouchEnd] = React.useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = React.useState(true);
-  const totalSlides = galleryPhotos.length;
-
-  const goToNext = React.useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  }, [totalSlides]);
-
-  // Auto-advance slides
-  React.useEffect(() => {
-    if (!isAutoPlaying) return;
-    
-    const timer = setInterval(() => {
-      goToNext();
-    }, 5000);
-    
-    return () => clearInterval(timer);
-  }, [currentIndex, isAutoPlaying, goToNext]);
-
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) {
-      // Swipe left
-      goToNext();
-    }
-
-    if (touchStart - touchEnd < -50) {
-      // Swipe right
-      goToPrev();
-    }
-  };
-
-  return (
-    <div className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div 
-        className="relative overflow-hidden rounded-xl shadow-2xl"
-        onMouseEnter={() => setIsAutoPlaying(false)}
-        onMouseLeave={() => setIsAutoPlaying(true)}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {/* Main Image */}
-        <div className="relative w-full aspect-[4/5] sm:aspect-[16/9]">
-          {galleryPhotos.map((photo, index) => (
-            <div
-              key={photo.id}
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover rounded-xl"
-                priority={index === currentIndex}
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={goToPrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 sm:p-2 rounded-full hover:bg-black/75 transition-colors z-10 w-10 h-10 sm:w-auto sm:h-auto"
-          aria-label="Previous photo"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 sm:p-2 rounded-full hover:bg-black/75 transition-colors z-10 w-10 h-10 sm:w-auto sm:h-auto"
-          aria-label="Next photo"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
-          {galleryPhotos.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-4 h-4 sm:w-3 sm:h-3 rounded-full transition-all ${
-                index === currentIndex ? 'bg-[#43fcff] w-10 sm:w-8' : 'bg-white/50 w-4 sm:w-3'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-
-    </div>
-  );
-};
 
 const About = () => {
   return (
@@ -157,14 +30,15 @@ const About = () => {
 
           <AboutCollege />
           
-          {/* Gallery Section */}
+          {/* Tech Fest Animated SVG Section */}
           <div className="w-full flex flex-col items-center py-12 md:py-16 lg:py-20">
             <h2 className="text-[#43fcff] font-bold text-3xl md:text-5xl text-center tracking-wide mb-8 font-['Play']">
-              OUR GALLERY
+              CELEBRATING TECHNOLOGY & TEACHING
             </h2>
-            <div className="w-full max-w-6xl px-4 sm:px-6">
-              <GallerySlider />
-            </div>
+            <TechFestAnimatedSVG />
+            <p className="mt-6 text-center text-lg text-[#43fcff]/80 max-w-xl">
+              Experience the fusion of <span className="font-bold">technology</span> and <span className="font-bold">education</span> at TechTopia Fest! Where innovation, learning, and celebration come together.
+            </p>
           </div>
 
           <EventVenue />
@@ -277,10 +151,6 @@ export const AboutCollege = () => {
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
             With a vision to empower students through experiential learning and innovation, Mrs. Namrata Kawale-Shinde, Chief Coordinator, Faculty of Technology and Coordinator of the Information Technology department, along with Mrs. Karishma Jain, Coordinator of the Computer Science department at Patkar-Varde College, took a pioneering step in 2025 by launching Techtopia—an intercollegiate technical fest. This initiative was designed to provide a vibrant platform for students to explore their creativity, sharpen technical acumen, and build leadership, teamwork, and organizational skills.
-          </p>
-          
-          <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
-            Under their able guidance, Techtopia quickly gained recognition for its unique blend of tech competitions, workshops, project showcases, and interactive sessions that bridge the gap between academic learning and industry trends. The fest has become a hub for budding technocrats to network, collaborate, and gain exposure to real-world challenges, all within an atmosphere of healthy competition and spirited innovation. Their commitment to excellence and student development has made Techtopia a milestone event in the college&apos;s academic calendar, setting new standards for student-led initiatives in the field of Information Technology and Computer Science.
           </p>
           
           <p className="text-base sm:text-lg text-gray-200 leading-relaxed">
